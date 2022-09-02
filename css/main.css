@@ -135,3 +135,13 @@ body {
 .finish .bad {
   color: tomato;
 }
+.repeat {
+  padding: 15px;
+  margin: auto;
+  background-color: var(--sec-color);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
