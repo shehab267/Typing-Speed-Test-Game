@@ -1,4 +1,8 @@
 /* Start Variables */
+:root {
+  --main-color: #2196f3;
+  --sec-color: #009688;
+}
 
 /* End Variables */
 
@@ -21,5 +25,113 @@ body {
 /* End Glopal Rules */
 
 /* Start Components */
-
+.game {
+  background-color: #eee;
+  min-height: 100vh;
+}
+.container {
+  margin: auto;
+  max-width: 900px;
+}
+.name {
+  background-color: var(--main-color);
+  color: white;
+  padding: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
 /* End Components */
+.message {
+  padding: 15px;
+  margin: 15px 0;
+  background-color: white;
+  text-align: center;
+  border-radius: 6px;
+}
+.message span {
+  color: var(--sec-color);
+  font-weight: bold;
+}
+.message span::before {
+  content: "[ ";
+}
+.message span::after {
+  content: " ]";
+}
+.start {
+  background-color: var(--sec-color);
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+}
+.the-word {
+  color: var(--main-color);
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+  padding: 20px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+.input {
+  display: block;
+  border: 3px solid var(--sec-color);
+  outline: 1px solid var(--main-color);
+  width: 100%;
+  padding: 15px;
+  margin: 15px 0;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 25px;
+  border-radius: 6px;
+  caret-color: var(--main-color);
+}
+.input:focus {
+  outline: none;
+}
+.upcoming-words {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px;
+  margin: 15px 0;
+}
+.upcoming-words div {
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  margin: 4px;
+  padding: 10px;
+  border-radius: 6px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+.control {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 15px;
+}
+.control span {
+  font-weight: bold;
+  color: var(--sec-color);
+}
+.finish {
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  padding: 15px;
+}
+.finish .good {
+  color: var(--sec-color);
+}
+.finish .bad {
+  color: tomato;
+}
