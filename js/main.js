@@ -17,7 +17,7 @@
   ---- [07] Start Play Function
   ---- [08] Start The Time And Count Score
   ---- [09] Add The Error And Success Messages
-  [04] Your Trainings To Add Features
+  [04] Additonal Feature 
   ---- [01] Save Score To Local Storage With Date
   ---- [02] Choose Levels From Select Box
   ---- [03] Break The Logic To More Functions
@@ -82,6 +82,7 @@ let timeLeftSpan = document.querySelector(".time span");
 let scoreGot = document.querySelector(".score .got");
 let scoreTotal = document.querySelector(".score .total");
 let finishMessage = document.querySelector(".finish");
+let repeatBtn = document.querySelector(".repeat");
 
 // Setting Level, Seconds, Score
 lvlSpan.innerHTML = defaultLvName;
@@ -101,6 +102,11 @@ startBtn.onclick = function () {
 
   // Generate Word func.
   genWord();
+};
+
+// Repeatbtn on click
+repeatBtn.onclick = function () {
+  location.reload();
 };
 
 function genWord() {
@@ -171,3 +177,7 @@ function startPlay() {
     }
   }, 1000);
 }
+
+// repeatBtn.addEventListener("click", () => {
+//   window.reload();
+// });
