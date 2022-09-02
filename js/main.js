@@ -1,9 +1,4 @@
 /*
-  Advices
-  - Always Check The Console
-  - Take Your Time To Name The Identifiers
-  - DRY
-
   Steps To Create The Project
   [01] Create HTML Markup 
   [02] Add Styling And Separate From Logic
@@ -177,7 +172,3 @@ function startPlay() {
     }
   }, 1000);
 }
-
-// repeatBtn.addEventListener("click", () => {
-//   window.reload();
-// });

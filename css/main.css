@@ -63,7 +63,7 @@ body {
   background-color: var(--sec-color);
   color: white;
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   padding: 20px;
   cursor: pointer;
@@ -140,8 +140,13 @@ body {
   margin: auto;
   background-color: var(--sec-color);
   color: white;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
-  border-radius: 6px;
+  border-radius: 9px;
   cursor: pointer;
+  transition-duration: 0.8s;
+}
+.repeat:hover {
+  opacity: 0.85;
+  transform: scale(1.1);
 }
