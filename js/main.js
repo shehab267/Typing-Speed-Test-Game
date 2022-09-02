@@ -124,5 +124,50 @@ function genWord() {
   }
 
   // Call Start Play Function
-  // startPlay();
+  startPlay();
+}
+
+// Start Play the Time and the Score
+
+// Start Play Function
+function startPlay() {
+  // Reset the timeLeft
+  timeLeftSpan.innerHTML = defaultLvSecound;
+  let start = setInterval(() => {
+    timeLeftSpan.innerHTML--;
+    if (timeLeftSpan.innerHTML === "0") {
+      // Stop the timer
+      clearInterval(start);
+      // Change the words to lowerCase
+      if (theWord.innerHTML.toLowerCase() === input.value.toLowerCase()) {
+        // Increase Score
+        scoreGot.innerHTML++;
+        // Empty Input Field
+        input.value = "";
+        // Cheaking if the array didn't Finish
+        if (words.length > 0) {
+          //  CallBack wordGen func.
+          genWord();
+        } else {
+          // On Winnig Situation
+          upcomingWords.remove();
+          // printing Congratulation
+          let span = document.createElement("span");
+          let winningMsg = document.createTextNode("Congratulation, YOU WON");
+          span.className = "good";
+
+          span.appendChild(winningMsg);
+          finishMessage.appendChild(span);
+        }
+      } else {
+        // If the user input wrong Input
+        let span = document.createElement("span");
+        span.className = "bad";
+        let gameOver = document.createTextNode("Game Over");
+        span.appendChild(gameOver);
+        // append the bad span to the finshMessege
+        finishMessage.appendChild(span);
+      }
+    }
+  }, 1000);
 }
