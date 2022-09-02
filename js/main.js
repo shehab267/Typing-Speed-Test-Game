@@ -58,15 +58,18 @@ const words = [
 // Setting Levels
 const lvls = {
   Easy: 5,
-  Medium: 3,
-  Hard: 2,
+  Medium: 4,
+  Hard: 3,
 };
 
-// Default Level
-let defaultLvName = "Easy"; // Make a selector for user at the End
+let checkedValue = document.querySelector(".messageCheckbox:checked").value;
+
+// Difficalty Level
+let defaultLvName = checkedValue;
 let defaultLvSecound = lvls[defaultLvName];
 
 // Catch Selectors
+let difLvl = document.querySelector(".dif-lvl");
 let lvlSpan = document.querySelector(".lvl");
 let secondsSpan = document.querySelector(".message .seconds");
 let startBtn = document.querySelector(".start");
@@ -93,6 +96,7 @@ input.onpaste = () => {
 // Start Play Function
 startBtn.onclick = function () {
   this.remove();
+  difLvl.remove();
   input.focus();
 
   // Generate Word func.
