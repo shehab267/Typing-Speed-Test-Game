@@ -24,13 +24,17 @@
 // Array Of Words
 const words = [
   "Hello",
-  "Programming",
   "Code",
-  "Javascript",
   "Town",
   "Country",
   "Testing",
   "Youtube",
+  "Runner",
+  "Roles",
+  "Test",
+  "Rust",
+  "Playing",
+  "Funny",
   "Linkedin",
   "Twitter",
   "Github",
@@ -38,37 +42,21 @@ const words = [
   "Internet",
   "Python",
   "Scala",
-  "Destructuring",
   "Paradigm",
-  "Styling",
-  "Cascade",
-  "Documentation",
-  "Coding",
-  "Funny",
-  "Working",
-  "Dependencies",
-  "Task",
-  "Runner",
-  "Roles",
-  "Test",
-  "Rust",
-  "Playing",
+  // "Styling",
+  // "Cascade",
+  // "Destructuring",
+  // "Coding",
+  // "Working",
+  // "Dependencies",
+  // "Task",
+  // "Documentation",
+  // "Programming",
+  // "Javascript",
 ];
 
-// Setting Levels
-const lvls = {
-  Easy: 5,
-  Medium: 4,
-  Hard: 3,
-};
-
-let checkedValue = document.querySelector(".messageCheckbox:checked").value;
-
-// Difficalty Level
-let defaultLvName = checkedValue;
-let defaultLvSecound = lvls[defaultLvName];
-
 // Catch Selectors
+let inputElements = document.getElementsByClassName("messageCheckbox");
 let difLvl = document.querySelector(".dif-lvl");
 let lvlSpan = document.querySelector(".lvl");
 let secondsSpan = document.querySelector(".message .seconds");
@@ -82,16 +70,38 @@ let scoreTotal = document.querySelector(".score .total");
 let finishMessage = document.querySelector(".finish");
 let repeatBtn = document.querySelector(".repeat");
 
-// Setting Level, Seconds, Score
+// Setting Levels
+const lvls = {
+  Easy: 5,
+  Medium: 4,
+  Hard: 3,
+};
+// Difficalty Default Level
+let defaultLvName = "Medium";
+let defaultLvSecound = lvls[defaultLvName];
 lvlSpan.innerHTML = defaultLvName;
 secondsSpan.innerHTML = defaultLvSecound;
-timeLeftSpan.innerHTML = defaultLvSecound;
-scoreTotal.innerHTML = words.length;
 
 // Disaple Paste Event
 input.onpaste = () => {
   return false;
 };
+
+document.getElementsByName("dif-lvl").forEach(function (chk) {
+  chk.addEventListener("click", function () {
+    if (this.checked) {
+      // Difficalty Level
+      defaultLvName = this.value;
+      defaultLvSecound = lvls[defaultLvName];
+      lvlSpan.innerHTML = defaultLvName;
+      secondsSpan.innerHTML = defaultLvSecound;
+      timeLeftSpan.innerHTML = defaultLvSecound;
+    }
+  });
+});
+
+// Total Score
+scoreTotal.innerHTML = words.length;
 
 // Start Play Function
 startBtn.onclick = function () {
@@ -144,7 +154,9 @@ function startPlay() {
       // Stop the timer
       clearInterval(start);
       // Change the words to lowerCase
-      if (theWord.innerHTML.toLowerCase() === input.value.toLowerCase()) {
+      if (
+        theWord.innerHTML.toLowerCase() === input.value.toLowerCase().trim()
+      ) {
         // Increase Score
         scoreGot.innerHTML++;
         // Empty Input Field
@@ -158,9 +170,8 @@ function startPlay() {
           upcomingWords.remove();
           // printing Congratulation
           let span = document.createElement("span");
-          let winningMsg = document.createTextNode("Congratulation, YOU WON");
+          let winningMsg = document.createTextNode("CONGRATULATION, YOU WON");
           span.className = "good";
-
           span.appendChild(winningMsg);
           finishMessage.appendChild(span);
         }
