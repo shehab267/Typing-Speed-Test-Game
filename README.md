@@ -1,8 +1,8 @@
 # Typing-Speed-Test-Game
 
-#####Simple Typing Speed Test Game Using HTML, CSS, Vanilla JS
+##### Simple Typing Speed Test Game Using HTML, CSS, Vanilla JS
 
-######_My first project using JS_
+###### _My first project using JS_
 
 ## Overview
 
@@ -19,9 +19,10 @@
 - The score changs dynamically
 - At the end of the game the Upcoming word will disappear, then the Finshing messege will be shown up depend on your status.
 
+#### Feel free to try it at <a href='https://shehab267.github.io/Typing-Speed-Test-Game/' target="_blank">Typing Speed Test Game </a>
 #### Home Screen
 
-<img src="img/Typing Speed Test.png">
+<img src="img/Typing Speed Test.png" width="720">
 
 ## Acknowledgement
 
